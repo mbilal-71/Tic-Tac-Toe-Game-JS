@@ -3,7 +3,7 @@ let newGamebtn = document.querySelector(".new-btn");
 let resetbtn = document.querySelector(".reset");
 let msgContainer = document.querySelector(".msg-cont");
 let msg = document.querySelector("#msg");
-let turnOF0 = true; //playerX,player0
+let turnOF0 = true;
 const winPatterns = [
   [0, 1, 2],
   [0, 3, 6],
@@ -15,7 +15,7 @@ const winPatterns = [
   [6, 7, 8],
 ];
 const resetgame = () => {
-  turnOF0 = true;
+  turnOF0 = false;
   enabledbtns();
   msgContainer.classList.add("hide");
 };
@@ -46,7 +46,7 @@ const disabledbtns = () => {
 };
 const enabledbtns = () => {
   for (let box of boxes) {
-    box.enabled = true;
+    box.disabled = false;
     box.innerText = "";
   }
 };
