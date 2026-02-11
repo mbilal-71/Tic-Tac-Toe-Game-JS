@@ -36,7 +36,7 @@ body{
     box-shadow: 0 0 1rem rgba(0,0,0,0.3);
     font-size: 8vmin;
     color: #b0413e;
-    background-color: #dbb867;
+    background-color:gray;
 }
 .reset{
     padding: 1rem;

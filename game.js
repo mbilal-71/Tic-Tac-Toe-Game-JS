@@ -51,14 +51,9 @@ const enabledbtns = () => {
   }
 };
 const checkWinner = () => {
-  for (let pattern of winPatterns) {
-    // console.log(pattern[0], pattern[1], pattern[2]);
-    // console.log(
-    //   boxes[pattern[0]].innerText,
-    //   boxes[pattern[1]].innerText,
-    //   boxes[pattern[2]].innerText,
-    // );
+  let isDraw = true; // assume draw initially
 
+  for (let pattern of winPatterns) {
     let pos1Val = boxes[pattern[0]].innerText;
     let pos2Val = boxes[pattern[1]].innerText;
     let pos3Val = boxes[pattern[2]].innerText;
@@ -70,6 +65,41 @@ const checkWinner = () => {
       }
     }
   }
+
+  // check for draw
+  boxes.forEach((box) => {
+    if (box.innerText === "") {
+      isDraw = false; // agar koi empty box hai to draw nahi
+    }
+  });
+
+  if (isDraw) {
+    msg.innerText = "It's a Draw!";
+    msgContainer.classList.remove("hide");
+    disabledbtns();
+  }
 };
+
+// const checkWinner = () => {
+//   for (let pattern of winPatterns) {
+// console.log(pattern[0], pattern[1], pattern[2]);
+// console.log(
+//   boxes[pattern[0]].innerText,
+//   boxes[pattern[1]].innerText,
+//   boxes[pattern[2]].innerText,
+// );
+
+//     let pos1Val = boxes[pattern[0]].innerText;
+//     let pos2Val = boxes[pattern[1]].innerText;
+//     let pos3Val = boxes[pattern[2]].innerText;
+
+//     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
+//       if (pos1Val === pos2Val && pos2Val === pos3Val) {
+//         showWinner(pos1Val);
+//         return true;
+//       }
+//     }
+//   }
+// };
 newGamebtn.addEventListener("click", resetgame);
 resetbtn.addEventListener("click", resetgame);
