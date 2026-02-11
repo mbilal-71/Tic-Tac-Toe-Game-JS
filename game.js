@@ -55,7 +55,6 @@ const disabledbtns = () => {
 const enabledbtns = () => {
   for (let box of boxes) {
     box.disabled = false;
-    box.style.backgroundColor = "";
     box.innerText = "";
   }
   moveCount = 0;
