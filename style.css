@@ -14,7 +14,7 @@ body{
     padding-top: 1rem;
 }
 .container{
-    height: 70vh;
+    height: 68vh;
      display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +45,7 @@ body{
     color: white;
     border-radius: 1rem;
     border: none;
+    margin-bottom: 5rem;
 }
 #msg{
 color: black;
