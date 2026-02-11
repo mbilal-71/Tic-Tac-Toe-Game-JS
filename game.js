@@ -43,6 +43,7 @@ boxes.forEach((box) => {
 });
 const showWinner = (winner) => {
   msg.innerText = `Congratulations,Winner is ${winner}`;
+  msg.style.backgroundColor = "green";
   msgContainer.classList.remove("hide");
   disabledbtns();
 };
